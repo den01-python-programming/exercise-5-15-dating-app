@@ -10,23 +10,7 @@ class SimpleDate:
         self.month = month
         self.year = year
 
-    def __str__(self):
-        return str(self.day) + "." + str(self.month) + "." + str(self.year)
-
-    def before(self, compared):
-        # first compare years
-        if (self.year < compared.year):
-            return True
-
-        # if the years are the same, compare months
-        if (self.year == compared.year and self.month < compared.month):
-            return True
-
-        # the years and the months are the same, compare days
-        if (self.year == compared.year and self.month == compared.month and self.day < compared.day):
-            return True
-
-        return False
+    # ...
 ```
 
 In this exercise set we will expand this class.
@@ -59,7 +43,7 @@ Here is an example of how the method works.
 ```python
 def main():
     date = SimpleDate(13, 2, 2015)
-    print("Friday of the examined week is " + str(date))
+    print("The date is " + str(date))
 
     newDate = date.after_number_of_days(7)
     week = 1
@@ -88,13 +72,12 @@ Friday after 7 weeks is 2.4.2015
 The date after 790 days from the examined Friday is ... try it out yourself!
 ```
 
-
 **NB!** Instead of modifying the state of the old object we return a new one. Imagine that the `SimpleDate` class has a method `advance` that works similarly to the method we programmed, but it modifies the state of the old object. In that case the next block of code would cause problems.
 
 ```python
 now = SimpleDate(13, 2, 2015)
 after_one_week = now
-after_one_week.advance(7)
+after_one_week.after_number_of_days(7)
 
 print("Now: " + str(now))
 print("After one week: " + str(after_one_week))
