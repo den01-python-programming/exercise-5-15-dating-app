@@ -31,11 +31,11 @@ Since the method must create **a new object**, the structure of the code should 
 
 ```python
 def after_number_of_days(self, days):
-    newDate = SimpleDate( ... )
+    new_date = SimpleDate( ... )
 
     # do something..
 
-    return newDate
+    return new_date
 ```
 
 Here is an example of how the method works.
@@ -45,11 +45,11 @@ def main():
     date = SimpleDate(13, 2, 2015)
     print("The date is " + str(date))
 
-    newDate = date.after_number_of_days(7)
+    new_date = date.after_number_of_days(7)
     week = 1
     while (week <= 7):
-        print("Friday after " + str(week) + " weeks is " + str(newDate))
-        newDate = newDate.after_number_of_days(7)
+        print("Friday after " + str(week) + " weeks is " + str(new_date))
+        new_date = new_date.after_number_of_days(7)
 
         week = week + 1
 
